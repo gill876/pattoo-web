@@ -7,6 +7,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 /* Route components */
 import Login from "./routes/login";
 import Dashboard from "./routes/dashboard";
+import Error from "./components/Error";
 
 function ProtectedRoute({ component: Component, ...props }) {
   return (
@@ -40,6 +41,7 @@ function RenderRoutes() {
           return <Login />;
         }}
       />
+      <Route path="/error" exact={true} component={Error}/>
       <ProtectedRoute path="/dashboard" exact={true} component={Dashboard} />
       <ProtectedRoute path="/" exact={true} component={Dashboard} />
       <Route component={() => <h1>Not Found!</h1>} />

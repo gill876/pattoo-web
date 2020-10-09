@@ -24,6 +24,8 @@ function Login() {
         setUsername("");
         setPassword("");
       }
+    }).catch(function(error){
+      history.push("/error");
     });
   };
 
